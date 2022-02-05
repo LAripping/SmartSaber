@@ -18,7 +18,7 @@ In 2022 I decided to revive this gem, and open-source it to share the fun!
 
 The original final deliverable for the 2016 assignment can be found in the [RT-DSP Project Spec.pdf](RT-DSP Project Spec.pdf) doc but it's in ​Gr​ee​k :greece:,  so you can find most of it's content in the following sections :gb:.
 
-You can start practicing the Jedi tradecraft in your dojo, by following the [step-by-step guide](#Usage Instructions). 
+You can start practicing the Jedi tradecraft in your own dojo, by following the [step-by-step guide](#Usage Instructions). 
 
 
 
@@ -67,21 +67,37 @@ Additionally, some extra features have been implemented:
 
 ## Usage Instructions
 
-1. Download and Install LabVIEW ... Demo / online etc.
+1. Download and Install LabVIEW from [here](https://www.ni.com/en-us/support/downloads/software-products/download.labview.html) 
+
+   > NI, the owner of LabVIEW offers a free 1year trial of LabVIEW's Community edition, which should be more than enough for practicing this project.
+   >
+   > ==TODO== investigate if it's possible to use "LabVIEW Online" to quick-demo the project
 
 2. Clone this repo
 
-3. Double-click the `src/SmartSaber.vi` file
+3. Double-click the `src/SmartSaber/SmartSaber.vi` file
 
    it should open in LabVIEW showing you this screen:
 
    ![](screenshots/launch.png)
 
+4. Click "Operate > Run" to start the program.
 
+   This will activate the computer's BT adapters and populate the "Device Name" field to pair the smartphone, blocking execution until it's connected.
 
+5. Then, on the smartphone:
 
+   * Pair with the computer through good-old Bluetooth settings
 
+   * Launch the AndroView app and ignore the VI download prompt
 
+   * Connect with the computer by entering the provided device name 
+
+6. Once the lightsaber beam appears, calibrate the relative north using the UI knob while holding the device in an upright position, until the lightsaber is oriented appropriately
+
+   ![](screenshots/relnorth.png)
+
+7. Start swinging - ***MAY THE FORCE BE WITH YOU***
 
 
 
@@ -118,7 +134,7 @@ On a high level, our project consists of the following components:
 
   ==TODO dl and link app Vis==
 
-In detail, here's what was used for a working setup, both originally and for the reboot 
+In detail, here's what was used for a working setup, both originally and for the 2022 reboot 
 
 | Smartphone (2016) - LG Google Nexus 5                        | Computer (2016) - HP Pavilion dv7 2030ev |
 | ------------------------------------------------------------ | ---------------------------------------- |
@@ -148,45 +164,63 @@ In detail, here's what was used for a working setup, both originally and for the
 
 ### Notes on the Internals
 
-The SmartSaber LabVIEW project is structured as follows:
+The SmartSaber LabVIEW project (`src/SmartSaber/`) is structured as follows:
 
-* Main, entry-point VI : `SmartSaber.vi` : 
+* Main VI, the project's entry-point: `SmartSaber.vi` : 
 * Supporting VIs
   * `subVIs/`
-  * `subVIs/sensors/` :
+  * `subVIs/sensors/` 
   * `globals/`
+* Pattern Recognition data ready for import:
+  * The raw data streams (`patterns/`)
+  * The resulting charts for these sequences (`waveforms/`)
+
+* Audiovisual FX Resources
+  * `images/`
+  * `sfx/`
 
 
 
-With regards to the signal processing, the AndroView mobile application sends sensor data 
 
-==TODO==
+The VI consists of 2 loops:
 
-Σε κάθε επανάληψη εξάγεται απο την σύνδεση Bluetooth ενα τμήμα των 107 bytes απο
-την κωδικοποιημένη ακολουθία δεδομένων. Συγκεκριμένα, επαναλαμβάνεται η μορφή:
-…yXXzaΧΧbXXcXXdXX…wXXxXXyXXzaXXb…
-Μεγέθους περίπου 100 απλών χαρακτήσων ASCII oπου μετά απο κάθε γράμμα το ΧΧ
-(μεταβλητού μεγέθους) συμβολίζει την τιμή της αντίστοιχης μεταβλητής αισθητήρα.
-Ειδικότερα:
-a - accel_x
-b - accel_y
-c - accel_z
-…
-f - ori_x
-g - ori_y
-h - ori_z
-…
-o - prox_dist
-p - prox_max
-q - gyro_x
-r - gyro_y
-s - gyro_z
-…
-Το πρόγραμμα σταματάει τον κύριο βρόγχο ανάλυσης δεδομένων με το που εντοπιστεί
-διακοπή της σύνδεσης (απο την πλευρά του κινητού) διατηρώντας όμως την δυνατότητα
-καταγραφής, συνεπώς και την εκτέλεση του προγράμματος (λειτουργία Auto-Stop)
+1. **The Main Loop:**
 
+   ...responsible for signal processing. The AndroView mobile application continuously captures sensor data and encodes them in a byte stream, which is sent to the computer over Bluetooth on regular intervals. The stream has the following format:
 
+   `...yXXz`**`aXXbXXcXXdXX...wXXxXXyXXz`**`aXXb...`
+
+   Each lowercase letter matches to a sensor and the XX part following (of varying length) holds the respective value read, according to this matrix: 
+
+   | a       | b       | c       | ...  | f     | g     | h     | ...  | o         | p        | q      | r      | s      | ...  |
+   | ------- | ------- | ------- | ---- | ----- | ----- | ----- | ---- | --------- | -------- | ------ | ------ | ------ | ---- |
+   | accel_x | accel_y | accel_z |      | ori_x | ori_y | ori_z |      | prox_dist | prox_max | gyro_x | gyro_y | gyro_z |      |
+
+   This project only leverages the following sensors:
+
+   * Orientation vector
+   * Level Data
+   * Gyroscopes
+   * Accelerometers
+   * Proximity Sensors
+
+   > Ellipsis (...) values are of no interest to our project and involves other irrelevant sensors such as the thermometer, magnet, pressure-sensor etc.
+
+   The VI stops the main loop when the Bluetooth connection is lost, but keeps the Patter Record functionality active and thus the whole program.    
+
+   The motion sensor data-stream received is also continuously plotted in the Front Panel in scrolling charts for all X, Y and Z axes.
+
+   ![](screenshots/charts.png)
+
+2. **The Event-Handling Loop**
+
+   Activated in 500ms intervals, it supports the Pattern Recognition functionality, by:
+
+   * handling the UI components that allow for recording patters
+
+   * ~~constantly checking whether the received data stream of a fixed time window matches any of the recorded movements~~ ==TODO==
+
+     > This is done by arithmetically comparing all data points of the  received waveform against the ones from all recorded waveforms, within a given error margin  
 
 
 
@@ -195,8 +229,11 @@ s - gyro_z
 > Both original TODOs envisioned from 2016 and fresh ones from the 2022 reboot.
 
 - [ ] Replace that horrible, 8bit-looking icon 
+- [ ] Do we even need the 2nd app?
 - [ ] Change 3D Background to a picture of the galaxy far far Away
+- [ ] Star Wars fonts as in the original project (and replace screenshots)
 - [ ] LabVIEW online? 
+- [ ] Lightsaber handle decals, not just beam ones
 - [ ] Code your own client app and replace the 2 third party ones needed now
 - [ ] Create Installer and EXE app to abstract LabVIEW details.
 

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="14008000">
+<Project Type="Project" LVVersion="21008000">
 	<Property Name="CCSymbols" Type="Str"></Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Property Name="NI.Project.Description" Type="Str"></Property>
@@ -112,6 +112,35 @@
 				<Item Name="Write To Spreadsheet File (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (I64).vi"/>
 				<Item Name="Write To Spreadsheet File (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (string).vi"/>
 				<Item Name="Write To Spreadsheet File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File.vi"/>
+				<Item Name="Sampling Mode.ctl" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sampling Mode.ctl"/>
+				<Item Name="Sound File Info.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Info.vi"/>
+				<Item Name="Sound File Info (path).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Info (path).vi"/>
+				<Item Name="Sound Data Format.ctl" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Data Format.ctl"/>
+				<Item Name="Sound File Open.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Open.vi"/>
+				<Item Name="Sound File Read Open.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read Open.vi"/>
+				<Item Name="Sound File Refnum.ctl" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Refnum.ctl"/>
+				<Item Name="Sound File Write Open.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Write Open.vi"/>
+				<Item Name="Sound File Info (refnum).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Info (refnum).vi"/>
+				<Item Name="Sound File Close.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Close.vi"/>
+				<Item Name="Sound Output Configure.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Configure.vi"/>
+				<Item Name="Sound File Read.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read.vi"/>
+				<Item Name="Sound File Read (I16).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read (I16).vi"/>
+				<Item Name="Sound File Position.ctl" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Position.ctl"/>
+				<Item Name="_2DArrToArrWfms.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/_2DArrToArrWfms.vi"/>
+				<Item Name="Sound File Read (I32).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read (I32).vi"/>
+				<Item Name="Sound File Read (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read (DBL).vi"/>
+				<Item Name="Sound File Read (SGL).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read (SGL).vi"/>
+				<Item Name="Sound File Read (U8).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound File Read (U8).vi"/>
+				<Item Name="Sound Output Write.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write.vi"/>
+				<Item Name="Sound Output Write (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write (DBL).vi"/>
+				<Item Name="_ArrWfmsToData.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/_ArrWfmsToData.vi"/>
+				<Item Name="_ArrWfmsTo1DInterleave.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/_ArrWfmsTo1DInterleave.vi"/>
+				<Item Name="_ArrWfmsTo2DArr.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/_ArrWfmsTo2DArr.vi"/>
+				<Item Name="Sound Output Write (I16).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write (I16).vi"/>
+				<Item Name="Sound Output Write (I32).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write (I32).vi"/>
+				<Item Name="Sound Output Write (SGL).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write (SGL).vi"/>
+				<Item Name="Sound Output Write (U8).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write (U8).vi"/>
+				<Item Name="Sound Output Write (DBL Single).vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/Sound Output Write (DBL Single).vi"/>
 			</Item>
 			<Item Name="lvsound2.dll" Type="Document" URL="/&lt;resource&gt;/lvsound2.dll"/>
 		</Item>
@@ -123,49 +152,28 @@
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
 				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
-				<Property Name="DistPart[0].productID" Type="Str">{1601A0F4-B5D1-4488-881C-9158DFB0D05C}</Property>
-				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Run-Time Engine 2014 f1</Property>
+				<Property Name="DistPart[0].productID" Type="Str">{46FB1DD2-CA29-416E-8E5F-B8AC0E4EFFB2}</Property>
+				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Runtime 2021</Property>
 				<Property Name="DistPart[0].SoftDep[0].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[0].productName" Type="Str">NI LabVIEW Run-Time Engine 2014 Non-English Support.</Property>
-				<Property Name="DistPart[0].SoftDep[0].upgradeCode" Type="Str">{CAC8FA79-6D3D-4263-BB7B-1A706EF87C08}</Property>
+				<Property Name="DistPart[0].SoftDep[0].productName" Type="Str">NI ActiveX Container</Property>
+				<Property Name="DistPart[0].SoftDep[0].upgradeCode" Type="Str">{1038A887-23E1-4289-B0BD-0C4B83C6BA21}</Property>
 				<Property Name="DistPart[0].SoftDep[1].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[1].productName" Type="Str">NI ActiveX Container</Property>
-				<Property Name="DistPart[0].SoftDep[1].upgradeCode" Type="Str">{1038A887-23E1-4289-B0BD-0C4B83C6BA21}</Property>
-				<Property Name="DistPart[0].SoftDep[10].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[10].productName" Type="Str">NI mDNS Responder 14.0</Property>
-				<Property Name="DistPart[0].SoftDep[10].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
-				<Property Name="DistPart[0].SoftDep[11].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[11].productName" Type="Str">NI Deployment Framework 2014</Property>
-				<Property Name="DistPart[0].SoftDep[11].upgradeCode" Type="Str">{838942E4-B73C-492E-81A3-AA1E291FD0DC}</Property>
-				<Property Name="DistPart[0].SoftDep[12].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[12].productName" Type="Str">NI Error Reporting 2014</Property>
-				<Property Name="DistPart[0].SoftDep[12].upgradeCode" Type="Str">{42E818C6-2B08-4DE7-BD91-B0FD704C119A}</Property>
+				<Property Name="DistPart[0].SoftDep[1].productName" Type="Str">NI Deployment Framework 2021</Property>
+				<Property Name="DistPart[0].SoftDep[1].upgradeCode" Type="Str">{838942E4-B73C-492E-81A3-AA1E291FD0DC}</Property>
 				<Property Name="DistPart[0].SoftDep[2].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[2].productName" Type="Str">NI Service Locator 14.0</Property>
-				<Property Name="DistPart[0].SoftDep[2].upgradeCode" Type="Str">{B235B862-6A92-4A04-A8B2-6D71F777DE67}</Property>
+				<Property Name="DistPart[0].SoftDep[2].productName" Type="Str">NI Error Reporting 2020</Property>
+				<Property Name="DistPart[0].SoftDep[2].upgradeCode" Type="Str">{42E818C6-2B08-4DE7-BD91-B0FD704C119A}</Property>
 				<Property Name="DistPart[0].SoftDep[3].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[3].productName" Type="Str">Math Kernel Libraries</Property>
-				<Property Name="DistPart[0].SoftDep[3].upgradeCode" Type="Str">{3BDD0408-2F90-4B42-9777-5ED1D4BE67A8}</Property>
+				<Property Name="DistPart[0].SoftDep[3].productName" Type="Str">NI Logos 21.0</Property>
+				<Property Name="DistPart[0].SoftDep[3].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
 				<Property Name="DistPart[0].SoftDep[4].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI Logos 14.0</Property>
-				<Property Name="DistPart[0].SoftDep[4].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
+				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI mDNS Responder 21.0</Property>
+				<Property Name="DistPart[0].SoftDep[4].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
 				<Property Name="DistPart[0].SoftDep[5].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI TDM Streaming 14.0</Property>
+				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI TDM Streaming 21.0</Property>
 				<Property Name="DistPart[0].SoftDep[5].upgradeCode" Type="Str">{4CD11BE6-6BB7-4082-8A27-C13771BC309B}</Property>
-				<Property Name="DistPart[0].SoftDep[6].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[6].productName" Type="Str">NI LabVIEW Web Server 2014</Property>
-				<Property Name="DistPart[0].SoftDep[6].upgradeCode" Type="Str">{4A8BDBBB-DA1C-45C9-8563-74C034FBD357}</Property>
-				<Property Name="DistPart[0].SoftDep[7].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[7].productName" Type="Str">NI LabVIEW Real-Time NBFifo 2014</Property>
-				<Property Name="DistPart[0].SoftDep[7].upgradeCode" Type="Str">{4372F3E3-5935-4012-93AB-B6710CE24920}</Property>
-				<Property Name="DistPart[0].SoftDep[8].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[8].productName" Type="Str">NI VC2008MSMs</Property>
-				<Property Name="DistPart[0].SoftDep[8].upgradeCode" Type="Str">{FDA3F8BB-BAA9-45D7-8DC7-22E1F5C76315}</Property>
-				<Property Name="DistPart[0].SoftDep[9].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[9].productName" Type="Str">NI VC2010MSMs</Property>
-				<Property Name="DistPart[0].SoftDep[9].upgradeCode" Type="Str">{EFBA6F9E-F934-4BD7-AC51-60CCA480489C}</Property>
-				<Property Name="DistPart[0].SoftDepCount" Type="Int">13</Property>
-				<Property Name="DistPart[0].upgradeCode" Type="Str">{4722F14B-8434-468D-840D-2B0CD8CBD5EA}</Property>
+				<Property Name="DistPart[0].SoftDepCount" Type="Int">6</Property>
+				<Property Name="DistPart[0].upgradeCode" Type="Str">{251E8668-4013-3671-857C-61D46B2AC827}</Property>
 				<Property Name="DistPartCount" Type="Int">1</Property>
 				<Property Name="INST_author" Type="Str">DIT UoA</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
@@ -178,12 +186,12 @@
 				<Property Name="INST_productVersion" Type="Str">1.0.1</Property>
 				<Property Name="INST_requireLVDevSys" Type="Bool">true</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">14008034</Property>
+				<Property Name="InstSpecVersion" Type="Str">21008000</Property>
 				<Property Name="MSI_arpCompany" Type="Str">DIT UoA</Property>
 				<Property Name="MSI_arpURL" Type="Str">www.dit.uoa.gr</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
 				<Property Name="MSI_distID" Type="Str">{81513514-ADAE-45B7-ADD8-3278539EB024}</Property>
-				<Property Name="MSI_osCheck" Type="Int">4</Property>
+				<Property Name="MSI_osCheck" Type="Int">0</Property>
 				<Property Name="MSI_upgradeCode" Type="Str">{89778C47-1593-4ED7-B82D-95758A29A9F1}</Property>
 				<Property Name="MSI_windowMessage" Type="Str">This installer will guide you through the installation of "SmartSaber". Press "Next" to proceed...</Property>
 				<Property Name="MSI_windowTitle" Type="Str">Welcome to the SmartSaber installer</Property>
@@ -262,6 +270,7 @@
 				<Property Name="App_INI_aliasGUID" Type="Str">{17620E3E-1760-4948-8B2C-9DF05D97D031}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{888C568B-78B6-4BC6-A6AD-1612A4EC9BC2}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_serverType" Type="Int">1</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{793A73C0-6E1E-499B-9ECD-780A574796E0}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">SmartSaber1.0</Property>
