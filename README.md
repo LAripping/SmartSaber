@@ -3,8 +3,6 @@
 # SmartSaber
 
 > *A LabVIEW project that virtualises hand movements captured via a smartphone's sensors, and graphically reproduces them in real time as a 3D lightsaber!* 
->
-> *Basically VR before it was cool!*
 
 A long time ago in a galaxy far far away, the final assignment for my Real Time Digital Signal Processing (RT-DSP) [Uni course](https://www.di.uoa.gr/en/studies/undergraduate/303) was to create a [LabVIEW](https://www.ni.com/en-us/shop/labview.html) project that would somehow -you guessed it- capture, process and *visualise* digital signals produced in real time. 
 
@@ -51,14 +49,16 @@ Additionally, some extra features have been implemented:
 
 * **Attack Training through "Learn and Detect"**
 
-  First, the Jedi Master records (or imports) three specific lightsaber moves which the instrument will "learn". 
+  Allowing the Jedi Master to record three lightsaber moves which the instrument will "learn". 
 
-  Then, when the young padawan successfully replays any of them, the instrument will "reward" them by playing a distinct sound effect for each move.  
+  Then, when the young padawan successfully replays any of them, the program will let them know they nailed it, with visual and sound effects.
 
+  An example "triple-threat" of moves the program supports are:   
+  
   | Downward Slash                           | Overhead Block                           | Reflector Spin                           |
   | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
   | ![](initial resources/DownwardSlash.png) | ![](initial resources/OverheadBlock.png) | ![](initial resources/ReflectorSpin.png) |
-
+  
   
 
 
@@ -70,8 +70,6 @@ Additionally, some extra features have been implemented:
 1. Download and Install LabVIEW from [here](https://www.ni.com/en-us/support/downloads/software-products/download.labview.html) 
 
    > NI, the owner of LabVIEW offers a free 1year trial of LabVIEW's Community edition, which should be more than enough for practicing this project.
-   >
-   > ==TODO== investigate if it's possible to use "LabVIEW Online" to quick-demo the project
 
 2. Clone this repo
 
@@ -79,7 +77,7 @@ Additionally, some extra features have been implemented:
 
    it should open in LabVIEW showing you this screen:
 
-   ![](screenshots/launch.png)
+   ![](screenshots/launch-fonts.png)
 
 4. Click "Operate > Run" to start the program.
 
@@ -95,9 +93,9 @@ Additionally, some extra features have been implemented:
 
 6. Once the lightsaber beam appears, calibrate the relative north using the UI knob while holding the device in an upright position, until the lightsaber is oriented appropriately
 
-   ![](screenshots/relnorth.png)
+   ![](screenshots/relnorth-fonts.png)
 
-7. Start swinging - ***MAY THE FORCE BE WITH YOU***
+7. Start swinging! - ***MAY THE FORCE BE WITH YOU***
 
 
 
@@ -125,14 +123,11 @@ LabVIEW apps are called Virtual Instruments (VIs) and are written in "G", a visu
 
 On a high level, our project consists of the following components:
 
-* A **smartphone**, collecting sensor data and sending them to the computer through the **apps** below:
+* A **smartphone**, collecting sensor data and transmitting to the computer over Bluetooth using the AndroView **app**
 
-  * AndroView Free - communicating over Bluetooth
-  * Sensor Network for LabVIEW - communicating over WiFi
+* A computer running the VI in **LabVIEW**, receiving the data in real time and rendering the animated lightsaber
 
-* A computer running the VI in **LabVIEW**, receiving data in real time and rendering the animated lightsaber
-
-  ==TODO dl and link app Vis==
+  
 
 In detail, here's what was used for a working setup, both originally and for the 2022 reboot 
 
@@ -158,7 +153,7 @@ In detail, here's what was used for a working setup, both originally and for the
 | USB port: micro 3.1, Type-C                                  | CPU: Intel Core i7 2.80 GHz                   |
 | Sensors: OEM Accelerometer / Compass / Gyroscope / Proximity | Memory: 16 GB                                 |
 | "AndroView Free" version 2.4.1, downloaded from [ApkPure](https://m.apkpure.com/androview-free-labview-vi/com.heightdev.androviewbluetooth/versions) | Graphics Card: AMD FirePro M5950 Mobility Pro |
-| "Sensor Network for LabVIEW" version 1.1.2, downloaded from [ApkPure](https://m.apkpure.com/sensor-network-for-labview/SCCT.SensorNetwork) | LabVIEW version: 21.0                         |
+|                                                              | LabVIEW version: 21.0                         |
 
 
 
@@ -171,13 +166,14 @@ The SmartSaber LabVIEW project (`src/SmartSaber/`) is structured as follows:
   * `subVIs/`
   * `subVIs/sensors/` 
   * `globals/`
-* Pattern Recognition data ready for import:
+* Pattern Recognition placeholder data:
   * The raw data streams (`patterns/`)
   * The resulting charts for these sequences (`waveforms/`)
 
 * Audiovisual FX Resources
   * `images/`
   * `sfx/`
+  * `fonts/`
 
 
 
@@ -210,17 +206,13 @@ The VI consists of 2 loops:
 
    The motion sensor data-stream received is also continuously plotted in the Front Panel in scrolling charts for all X, Y and Z axes.
 
-   ![](screenshots/charts.png)
+   ![](screenshots/charts-fonts.png)
+
+   The main loop is also responsible for detecting the recorded patterns,  by continuously checking the received byte stream of a fixed time window, and comparing it point-to-point with all three recorded waveforms (tolerant to a certain error margin)
 
 2. **The Event-Handling Loop**
 
-   Activated in 500ms intervals, it supports the Pattern Recognition functionality, by:
-
-   * handling the UI components that allow for recording patters
-
-   * ~~constantly checking whether the received data stream of a fixed time window matches any of the recorded movements~~ ==TODO==
-
-     > This is done by arithmetically comparing all data points of the  received waveform against the ones from all recorded waveforms, within a given error margin  
+   This is purely responsible for the UI buttons allowing the user to save the motion recorded as a specific move.  
 
 
 
@@ -229,11 +221,18 @@ The VI consists of 2 loops:
 > Both original TODOs envisioned from 2016 and fresh ones from the 2022 reboot.
 
 - [ ] Replace that horrible, 8bit-looking icon 
-- [ ] Do we even need the 2nd app?
+
 - [ ] Change 3D Background to a picture of the galaxy far far Away
-- [ ] Star Wars fonts as in the original project (and replace screenshots)
-- [ ] LabVIEW online? 
+
+- [ ] Star Wars fonts ("Star Jedi") as in the original project (and replace screenshots)
+
+  Need to include them in the installer, so that the user doesn't have to manually install them to their system
+
+- [ ] investigate if it's possible to use "LabVIEW Online" to quick-demo the project
+
 - [ ] Lightsaber handle decals, not just beam ones
-- [ ] Code your own client app and replace the 2 third party ones needed now
+
+- [ ] Code your own client app?
+
 - [ ] Create Installer and EXE app to abstract LabVIEW details.
 

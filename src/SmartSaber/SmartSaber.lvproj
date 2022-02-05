@@ -36,6 +36,8 @@
 		<Item Name="AndroVIEW Free app" Type="Hyperlink">
 			<Property Name="NI.Address" Type="Str">https://play.google.com/store/apps/details?id=com.heightdev.androviewbluetooth</Property>
 		</Item>
+		<Item Name="Starjedi.ttf" Type="Document" URL="../fonts/Starjedi.ttf"/>
+		<Item Name="Starjhol.ttf" Type="Document" URL="../fonts/Starjhol.ttf"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="_Get Sound Error From Return Value.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/_Get Sound Error From Return Value.vi"/>
