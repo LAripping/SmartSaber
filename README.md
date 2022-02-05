@@ -178,7 +178,7 @@ The SmartSaber LabVIEW project (`src/SmartSaber/`) is structured as follows:
 
 
 
-The VI consists of 2 loops:
+The VI's code involves 2 loops:
 
 1. **The Main Loop:**
 
@@ -200,9 +200,7 @@ The VI consists of 2 loops:
    * Accelerometers
    * Proximity Sensors
 
-   > Ellipsis (...) values are of no interest to our project and involves other irrelevant sensors such as the thermometer, magnet, pressure-sensor etc.
-
-   The VI stops the main loop when the Bluetooth connection is lost, but keeps the Patter Record functionality active and thus the whole program.    
+   > Ellipsis (...) values are of no interest to our project and involves other irrelevant sensors such as the thermometer, magnet, pressure-sensor etc.   
 
    The motion sensor data-stream received is also continuously plotted in the Front Panel in scrolling charts for all X, Y and Z axes.
 
@@ -214,6 +212,11 @@ The VI consists of 2 loops:
 
    This is purely responsible for the UI buttons allowing the user to save the motion recorded as a specific move.  
 
+Stopping the program:
+
+* The main loop (but not the whole program!) stops automatically when the Bluetooth connection with the device is lost, lighting up the "Auto-stop" indicator. This keeps the patter record functionality active.
+* The program ceases completely when the "Operate > Stop" button is clicked from LabVIEW's menus  
+
 
 
 ## Future Work
@@ -223,6 +226,10 @@ The VI consists of 2 loops:
 - [ ] Replace that horrible, 8bit-looking icon 
 
 - [ ] Change 3D Background to a picture of the galaxy far far Away
+
+  Maybe need to do this [programmatically](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kHejSAE&l=en-GR)
+
+  Re-replace screenshots
 
 - [ ] Star Wars fonts ("Star Jedi") as in the original project (and replace screenshots)
 
