@@ -47,13 +47,13 @@ Additionally, some extra features have been implemented:
   * <span style=color:red>Darth Maul's Lightsaber</span>
   * <span style=color:fuchsia>Mace Windu's Lightsaber</span>
 
-* **Attack Training through "Learn and Detect"**
+* **Pattern Recognition**
 
   Allowing the Jedi Master to record three lightsaber moves which the instrument will "learn". 
 
   Then, when the young padawan successfully replays any of them, the program will let them know they nailed it, with visual and sound effects.
 
-  An example "triple-threat" of moves the program supports are:   
+  An example "triple-threat" of moves that can be loaded to the program are:   
   
   | Downward Slash                           | Overhead Block                           | Reflector Spin                           |
   | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -162,14 +162,19 @@ In detail, here's what was used for a working setup, both originally and for the
 The SmartSaber LabVIEW project (`src/SmartSaber/`) is structured as follows:
 
 * Main VI, the project's entry-point: `SmartSaber.vi` : 
+
 * Supporting VIs
   * `subVIs/`
   * `subVIs/sensors/` 
   * `globals/`
+  
 * Pattern Recognition placeholder data:
   * The raw data streams (`patterns/`)
+  
   * The resulting charts for these sequences (`waveforms/`)
-
+  
+    > As all sensors (and warriors) are different, these moves were recorded back in 2016 and are only provided as placeholder values to populate the UI views. It is thus almost impossible to actually imitate them. Instead, the user is encouraged to record their own moves according to their devices and wrist flexibilities.
+  
 * Audiovisual FX Resources
   * `images/`
   * `sfx/`
@@ -178,11 +183,11 @@ The SmartSaber LabVIEW project (`src/SmartSaber/`) is structured as follows:
 
 
 
-The VI's code involves 2 loops:
+The VI's code revolves around 2 loops:
 
 1. **The Main Loop:**
 
-   ...responsible for signal processing. The AndroView mobile application continuously captures sensor data and encodes them in a byte stream, which is sent to the computer over Bluetooth on regular intervals. The stream has the following format:
+   ...responsible for signal processing and 3D rendering. The AndroView mobile application continuously captures sensor data and encodes them in a byte stream, which is sent to the computer over Bluetooth on regular intervals. The stream has the following format:
 
    `...yXXz`**`aXXbXXcXXdXX...wXXxXXyXXz`**`aXXb...`
 
@@ -210,12 +215,11 @@ The VI's code involves 2 loops:
 
 2. **The Event-Handling Loop**
 
-   This is purely responsible for the UI buttons allowing the user to save the motion recorded as a specific move.  
+   This is purely responsible for the UI buttons corresponding to the move record feature, which allow the user to save their motion of a certain time window.   
 
-Stopping the program:
+The program can be fully stopped through the "Operate > Stop" button in the LabVIEW menus. When the Bluetooth connection with the device is lost the program doesn't fully stop but the processing loop is ceased, lighting the blue "Auto-stop" indicator. 
 
-* The main loop (but not the whole program!) stops automatically when the Bluetooth connection with the device is lost, lighting up the "Auto-stop" indicator. This keeps the patter record functionality active.
-* The program ceases completely when the "Operate > Stop" button is clicked from LabVIEW's menus  
+![](screenshots/autostop-bg.png)
 
 
 
