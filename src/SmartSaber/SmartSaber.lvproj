@@ -32,12 +32,10 @@
 		<Item Name="waveforms" Type="Folder" URL="../waveforms">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="SmartSaber.vi" Type="VI" URL="../SmartSaber.vi"/>
-		<Item Name="AndroVIEW Free app" Type="Hyperlink">
-			<Property Name="NI.Address" Type="Str">https://play.google.com/store/apps/details?id=com.heightdev.androviewbluetooth</Property>
+		<Item Name="fonts" Type="Folder" URL="../fonts">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Starjedi.ttf" Type="Document" URL="../fonts/Starjedi.ttf"/>
-		<Item Name="Starjhol.ttf" Type="Document" URL="../fonts/Starjhol.ttf"/>
+		<Item Name="SmartSaber.vi" Type="VI" URL="../SmartSaber.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="_Get Sound Error From Return Value.vi" Type="VI" URL="/&lt;vilib&gt;/sound2/lvsound2.llb/_Get Sound Error From Return Value.vi"/>
@@ -147,12 +145,16 @@
 			<Item Name="lvsound2.dll" Type="Document" URL="/&lt;resource&gt;/lvsound2.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="smartsaber_installer" Type="Installer">
+			<Item Name="Installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">SmartSaber</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
 				<Property Name="Destination[0].tag" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
-				<Property Name="DestinationCount" Type="Int">1</Property>
+				<Property Name="Destination[1].name" Type="Str">SmartSaber</Property>
+				<Property Name="Destination[1].parent" Type="Str">{624309A2-B0CB-4149-B964-A0FF8B968B6A}</Property>
+				<Property Name="Destination[1].tag" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Destination[1].type" Type="Str">userFolder</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
 				<Property Name="DistPart[0].productID" Type="Str">{46FB1DD2-CA29-416E-8E5F-B8AC0E4EFFB2}</Property>
 				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Runtime 2021</Property>
@@ -162,35 +164,52 @@
 				<Property Name="DistPart[0].SoftDep[1].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[0].SoftDep[1].productName" Type="Str">NI Deployment Framework 2021</Property>
 				<Property Name="DistPart[0].SoftDep[1].upgradeCode" Type="Str">{838942E4-B73C-492E-81A3-AA1E291FD0DC}</Property>
+				<Property Name="DistPart[0].SoftDep[10].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[0].SoftDep[10].productName" Type="Str">NI VC2015 Runtime</Property>
+				<Property Name="DistPart[0].SoftDep[10].upgradeCode" Type="Str">{D42E7BAE-6589-4570-B6A3-3E28889392E7}</Property>
+				<Property Name="DistPart[0].SoftDep[11].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[0].SoftDep[11].productName" Type="Str">NI TDM Streaming 21.0</Property>
+				<Property Name="DistPart[0].SoftDep[11].upgradeCode" Type="Str">{4CD11BE6-6BB7-4082-8A27-C13771BC309B}</Property>
 				<Property Name="DistPart[0].SoftDep[2].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[0].SoftDep[2].productName" Type="Str">NI Error Reporting 2020</Property>
 				<Property Name="DistPart[0].SoftDep[2].upgradeCode" Type="Str">{42E818C6-2B08-4DE7-BD91-B0FD704C119A}</Property>
 				<Property Name="DistPart[0].SoftDep[3].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[3].productName" Type="Str">NI Logos 21.0</Property>
-				<Property Name="DistPart[0].SoftDep[3].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
+				<Property Name="DistPart[0].SoftDep[3].productName" Type="Str">NI LabVIEW Real-Time NBFifo 2021</Property>
+				<Property Name="DistPart[0].SoftDep[3].upgradeCode" Type="Str">{764CB77E-F1C0-34FF-B1B9-3AF23D162D6B}</Property>
 				<Property Name="DistPart[0].SoftDep[4].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI mDNS Responder 21.0</Property>
-				<Property Name="DistPart[0].SoftDep[4].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
+				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI LabVIEW Runtime 2021 Non-English Support.</Property>
+				<Property Name="DistPart[0].SoftDep[4].upgradeCode" Type="Str">{61B01DDE-3406-339D-9ABC-358C2D13CC73}</Property>
 				<Property Name="DistPart[0].SoftDep[5].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI TDM Streaming 21.0</Property>
-				<Property Name="DistPart[0].SoftDep[5].upgradeCode" Type="Str">{4CD11BE6-6BB7-4082-8A27-C13771BC309B}</Property>
-				<Property Name="DistPart[0].SoftDepCount" Type="Int">6</Property>
+				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI Logos 21.0</Property>
+				<Property Name="DistPart[0].SoftDep[5].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
+				<Property Name="DistPart[0].SoftDep[6].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[0].SoftDep[6].productName" Type="Str">NI LabVIEW Web Server 2021</Property>
+				<Property Name="DistPart[0].SoftDep[6].upgradeCode" Type="Str">{0960380B-EA86-4E0C-8B57-14CD8CCF2C15}</Property>
+				<Property Name="DistPart[0].SoftDep[7].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[0].SoftDep[7].productName" Type="Str">NI mDNS Responder 21.0</Property>
+				<Property Name="DistPart[0].SoftDep[7].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
+				<Property Name="DistPart[0].SoftDep[8].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[0].SoftDep[8].productName" Type="Str">Math Kernel Libraries 2017</Property>
+				<Property Name="DistPart[0].SoftDep[8].upgradeCode" Type="Str">{699C1AC5-2CF2-4745-9674-B19536EBA8A3}</Property>
+				<Property Name="DistPart[0].SoftDep[9].exclude" Type="Bool">false</Property>
+				<Property Name="DistPart[0].SoftDep[9].productName" Type="Str">Math Kernel Libraries 2020</Property>
+				<Property Name="DistPart[0].SoftDep[9].upgradeCode" Type="Str">{9872BBBA-FB96-42A4-80A2-9605AC5CBCF1}</Property>
+				<Property Name="DistPart[0].SoftDepCount" Type="Int">12</Property>
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{251E8668-4013-3671-857C-61D46B2AC827}</Property>
 				<Property Name="DistPartCount" Type="Int">1</Property>
 				<Property Name="INST_author" Type="Str">DIT UoA</Property>
-				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
-				<Property Name="INST_buildLocation" Type="Path">../builds/SmartSaber/Installer</Property>
-				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
-				<Property Name="INST_buildSpecName" Type="Str">smartsaber_installer</Property>
+				<Property Name="INST_buildLocation" Type="Path">/C/Users/tsaou/Desktop/GuestDesktop/RTDSP Project</Property>
+				<Property Name="INST_buildSpecName" Type="Str">Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="INST_includeError" Type="Bool">false</Property>
+				<Property Name="INST_installerName" Type="Str">ss_installer.exe</Property>
 				<Property Name="INST_productName" Type="Str">SmartSaber</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.1</Property>
+				<Property Name="INST_productVersion" Type="Str">22.2.0</Property>
 				<Property Name="INST_requireLVDevSys" Type="Bool">true</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">21008000</Property>
-				<Property Name="MSI_arpCompany" Type="Str">DIT UoA</Property>
-				<Property Name="MSI_arpURL" Type="Str">www.dit.uoa.gr</Property>
+				<Property Name="MSI_arpCompany" Type="Str">LAripping</Property>
+				<Property Name="MSI_arpURL" Type="Str">laripping.github.io</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
 				<Property Name="MSI_distID" Type="Str">{81513514-ADAE-45B7-ADD8-3278539EB024}</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>
@@ -203,98 +222,148 @@
 				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="Source[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[0].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[0].File[0].name" Type="Str">1_?e?t??????e? ???d?a??afe?.pdf</Property>
-				<Property Name="Source[0].File[0].tag" Type="Ref"></Property>
+				<Property Name="Source[0].File[0].name" Type="Str">MotionDetected_glob.vi</Property>
+				<Property Name="Source[0].File[0].tag" Type="Ref">/My Computer/globals/MotionDetected_glob.vi</Property>
 				<Property Name="Source[0].FileCount" Type="Int">1</Property>
-				<Property Name="Source[0].name" Type="Str">documentation</Property>
-				<Property Name="Source[0].tag" Type="Ref"></Property>
+				<Property Name="Source[0].name" Type="Str">globals</Property>
+				<Property Name="Source[0].tag" Type="Ref">/My Computer/globals</Property>
 				<Property Name="Source[0].type" Type="Str">Folder</Property>
 				<Property Name="Source[1].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[1].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[1].File[0].name" Type="Str">MotionDetected_glob.vi</Property>
-				<Property Name="Source[1].File[0].tag" Type="Ref">/My Computer/globals/MotionDetected_glob.vi</Property>
+				<Property Name="Source[1].File[0].name" Type="Str">blue.jpg</Property>
+				<Property Name="Source[1].File[0].tag" Type="Ref">/My Computer/images/blue.jpg</Property>
 				<Property Name="Source[1].FileCount" Type="Int">1</Property>
-				<Property Name="Source[1].name" Type="Str">globals</Property>
-				<Property Name="Source[1].tag" Type="Ref">/My Computer/globals</Property>
+				<Property Name="Source[1].name" Type="Str">images</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/images</Property>
 				<Property Name="Source[1].type" Type="Str">Folder</Property>
+				<Property Name="Source[10].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[10].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[10].File[0].name" Type="Str">ds.txt</Property>
+				<Property Name="Source[10].File[0].tag" Type="Ref">/My Computer/patterns/ds.txt</Property>
+				<Property Name="Source[10].FileCount" Type="Int">1</Property>
+				<Property Name="Source[10].name" Type="Str">patterns</Property>
+				<Property Name="Source[10].tag" Type="Ref">/My Computer/patterns</Property>
+				<Property Name="Source[10].type" Type="Str">Folder</Property>
+				<Property Name="Source[11].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[11].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[11].File[0].name" Type="Str">imperial_march.wav</Property>
+				<Property Name="Source[11].File[0].tag" Type="Ref">/My Computer/sfx/imperial_march.wav</Property>
+				<Property Name="Source[11].FileCount" Type="Int">1</Property>
+				<Property Name="Source[11].name" Type="Str">sfx</Property>
+				<Property Name="Source[11].tag" Type="Ref">/My Computer/sfx</Property>
+				<Property Name="Source[11].type" Type="Str">Folder</Property>
+				<Property Name="Source[12].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[12].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[12].File[0].name" Type="Str">3Dconfig.vi</Property>
+				<Property Name="Source[12].File[0].tag" Type="Ref">/My Computer/subVIs/3Dconfig.vi</Property>
+				<Property Name="Source[12].FileCount" Type="Int">1</Property>
+				<Property Name="Source[12].name" Type="Str">subVIs</Property>
+				<Property Name="Source[12].tag" Type="Ref">/My Computer/subVIs</Property>
+				<Property Name="Source[12].type" Type="Str">Folder</Property>
+				<Property Name="Source[13].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[13].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[13].File[0].name" Type="Str">ds.bmp</Property>
+				<Property Name="Source[13].File[0].tag" Type="Ref">/My Computer/waveforms/ds.bmp</Property>
+				<Property Name="Source[13].FileCount" Type="Int">1</Property>
+				<Property Name="Source[13].name" Type="Str">waveforms</Property>
+				<Property Name="Source[13].tag" Type="Ref">/My Computer/waveforms</Property>
+				<Property Name="Source[13].type" Type="Str">Folder</Property>
+				<Property Name="Source[14].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[14].name" Type="Str">SmartSaber.vi</Property>
+				<Property Name="Source[14].tag" Type="Ref">/My Computer/SmartSaber.vi</Property>
+				<Property Name="Source[14].type" Type="Str">File</Property>
 				<Property Name="Source[2].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[2].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[2].File[0].name" Type="Str">blue.jpg</Property>
-				<Property Name="Source[2].File[0].tag" Type="Ref">/My Computer/images/blue.jpg</Property>
+				<Property Name="Source[2].File[0].name" Type="Str">ds.txt</Property>
+				<Property Name="Source[2].File[0].tag" Type="Ref">/My Computer/patterns/ds.txt</Property>
 				<Property Name="Source[2].FileCount" Type="Int">1</Property>
-				<Property Name="Source[2].name" Type="Str">images</Property>
-				<Property Name="Source[2].tag" Type="Ref">/My Computer/images</Property>
+				<Property Name="Source[2].name" Type="Str">patterns</Property>
+				<Property Name="Source[2].tag" Type="Ref">/My Computer/patterns</Property>
 				<Property Name="Source[2].type" Type="Str">Folder</Property>
 				<Property Name="Source[3].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[3].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[3].File[0].name" Type="Str">ds.txt</Property>
-				<Property Name="Source[3].File[0].tag" Type="Ref">/My Computer/patterns/ds.txt</Property>
+				<Property Name="Source[3].File[0].name" Type="Str">imperial_march.wav</Property>
+				<Property Name="Source[3].File[0].tag" Type="Ref">/My Computer/sfx/imperial_march.wav</Property>
 				<Property Name="Source[3].FileCount" Type="Int">1</Property>
-				<Property Name="Source[3].name" Type="Str">patterns</Property>
-				<Property Name="Source[3].tag" Type="Ref">/My Computer/patterns</Property>
+				<Property Name="Source[3].name" Type="Str">sfx</Property>
+				<Property Name="Source[3].tag" Type="Ref">/My Computer/sfx</Property>
 				<Property Name="Source[3].type" Type="Str">Folder</Property>
 				<Property Name="Source[4].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[4].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[4].File[0].name" Type="Str">imperial_march.wav</Property>
-				<Property Name="Source[4].File[0].tag" Type="Ref">/My Computer/sfx/imperial_march.wav</Property>
+				<Property Name="Source[4].File[0].name" Type="Str">3Dconfig.vi</Property>
+				<Property Name="Source[4].File[0].tag" Type="Ref">/My Computer/subVIs/3Dconfig.vi</Property>
 				<Property Name="Source[4].FileCount" Type="Int">1</Property>
-				<Property Name="Source[4].name" Type="Str">sfx</Property>
-				<Property Name="Source[4].tag" Type="Ref">/My Computer/sfx</Property>
+				<Property Name="Source[4].name" Type="Str">subVIs</Property>
+				<Property Name="Source[4].tag" Type="Ref">/My Computer/subVIs</Property>
 				<Property Name="Source[4].type" Type="Str">Folder</Property>
 				<Property Name="Source[5].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[5].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[5].File[0].name" Type="Str">3Dconfig.vi</Property>
-				<Property Name="Source[5].File[0].tag" Type="Ref">/My Computer/subVIs/3Dconfig.vi</Property>
+				<Property Name="Source[5].File[0].name" Type="Str">ds.bmp</Property>
+				<Property Name="Source[5].File[0].tag" Type="Ref">/My Computer/waveforms/ds.bmp</Property>
 				<Property Name="Source[5].FileCount" Type="Int">1</Property>
-				<Property Name="Source[5].name" Type="Str">subVIs</Property>
-				<Property Name="Source[5].tag" Type="Ref">/My Computer/subVIs</Property>
+				<Property Name="Source[5].name" Type="Str">waveforms</Property>
+				<Property Name="Source[5].tag" Type="Ref">/My Computer/waveforms</Property>
 				<Property Name="Source[5].type" Type="Str">Folder</Property>
 				<Property Name="Source[6].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[6].File[0].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
 				<Property Name="Source[6].File[0].name" Type="Str">ds.bmp</Property>
 				<Property Name="Source[6].File[0].tag" Type="Ref">/My Computer/waveforms/ds.bmp</Property>
-				<Property Name="Source[6].FileCount" Type="Int">1</Property>
-				<Property Name="Source[6].name" Type="Str">waveforms</Property>
-				<Property Name="Source[6].tag" Type="Ref">/My Computer/waveforms</Property>
-				<Property Name="Source[6].type" Type="Str">Folder</Property>
-				<Property Name="Source[7].dest" Type="Str">{A490ECE0-D149-4137-BD24-EC804714A447}</Property>
-				<Property Name="Source[7].name" Type="Str">SmartSaber.vi</Property>
-				<Property Name="Source[7].Shortcut[0].destIndex" Type="Int">1</Property>
-				<Property Name="Source[7].Shortcut[0].name" Type="Str">SmartSaber</Property>
-				<Property Name="Source[7].Shortcut[0].subDir" Type="Str"></Property>
-				<Property Name="Source[7].ShortcutCount" Type="Int">1</Property>
-				<Property Name="Source[7].tag" Type="Ref">/My Computer/SmartSaber.vi</Property>
-				<Property Name="Source[7].type" Type="Str">File</Property>
-				<Property Name="SourceCount" Type="Int">8</Property>
+				<Property Name="Source[6].name" Type="Str">SmartSaber.vi</Property>
+				<Property Name="Source[6].tag" Type="Ref">/My Computer/SmartSaber.vi</Property>
+				<Property Name="Source[6].type" Type="Str">File</Property>
+				<Property Name="Source[7].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[7].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[7].File[0].name" Type="Str">Starjedi.ttf</Property>
+				<Property Name="Source[7].File[0].tag" Type="Ref">/My Computer/fonts/Starjedi.ttf</Property>
+				<Property Name="Source[7].FileCount" Type="Int">1</Property>
+				<Property Name="Source[7].name" Type="Str">fonts</Property>
+				<Property Name="Source[7].tag" Type="Ref">/My Computer/fonts</Property>
+				<Property Name="Source[7].type" Type="Str">Folder</Property>
+				<Property Name="Source[8].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[8].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[8].File[0].name" Type="Str">MotionDetected_glob.vi</Property>
+				<Property Name="Source[8].File[0].tag" Type="Ref">/My Computer/globals/MotionDetected_glob.vi</Property>
+				<Property Name="Source[8].FileCount" Type="Int">1</Property>
+				<Property Name="Source[8].name" Type="Str">globals</Property>
+				<Property Name="Source[8].tag" Type="Ref">/My Computer/globals</Property>
+				<Property Name="Source[8].type" Type="Str">Folder</Property>
+				<Property Name="Source[9].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[9].File[0].dest" Type="Str">{6231CF35-C874-477B-BC7F-90B81B5B1CC7}</Property>
+				<Property Name="Source[9].File[0].name" Type="Str">blue.jpg</Property>
+				<Property Name="Source[9].File[0].tag" Type="Ref">/My Computer/images/blue.jpg</Property>
+				<Property Name="Source[9].FileCount" Type="Int">1</Property>
+				<Property Name="Source[9].name" Type="Str">images</Property>
+				<Property Name="Source[9].tag" Type="Ref">/My Computer/images</Property>
+				<Property Name="Source[9].type" Type="Str">Folder</Property>
+				<Property Name="SourceCount" Type="Int">15</Property>
 			</Item>
-			<Item Name="SmartSaber1.0" Type="EXE">
+			<Item Name="SmartSaber22" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{17620E3E-1760-4948-8B2C-9DF05D97D031}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{888C568B-78B6-4BC6-A6AD-1612A4EC9BC2}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">1</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{793A73C0-6E1E-499B-9ECD-780A574796E0}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">SmartSaber1.0</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">SmartSaber22</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/SmartSaber1.0</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/tsaou/Desktop/GuestDesktop/RTDSP Project/dist</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{71A2FCB9-98DD-4CBC-B69F-F5FAB5062CB5}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">SmartSaber.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/SmartSaber1.0/NI_AB_PROJECTNAME.exe</Property>
-				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
+				<Property Name="Bld_version.major" Type="Int">22</Property>
+				<Property Name="Bld_version.minor" Type="Int">2</Property>
+				<Property Name="Destination[0].destName" Type="Str">SmartSaber22.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/tsaou/Desktop/GuestDesktop/RTDSP Project/dist/SmartSaber22.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/SmartSaber1.0/data</Property>
-				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/tsaou/Desktop/GuestDesktop/RTDSP Project/dist/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/images/FormatFactorySmartSaber icon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{04B3BDC8-E0FA-485D-B434-291FBD16F274}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{A95BA2D7-B44E-4513-833E-3AF16463A494}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SmartSaber.vi</Property>
@@ -336,14 +405,20 @@
 				<Property Name="Source[7].itemID" Type="Ref">/My Computer/waveforms</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[7].type" Type="Str">Container</Property>
-				<Property Name="SourceCount" Type="Int">8</Property>
+				<Property Name="Source[8].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[8].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/fonts</Property>
+				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">9</Property>
 				<Property Name="TgtF_companyName" Type="Str">Department of Informatics and Telecommunications - University of Athens</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">SmartSaber</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">SmartSaber - A LabVIEW project that virtualises hand movements captured via a smartphone's sensors, and graphically reproduces them in real time as a 3D lightsaber! </Property>
 				<Property Name="TgtF_internalName" Type="Str">SmartSaber</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2016 Tsaousis Leonidas DIT UoA</Property>
-				<Property Name="TgtF_productName" Type="Str">SmartSaber1.0</Property>
+				<Property Name="TgtF_productName" Type="Str">SmartSaber22</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{152AEB3F-0CC0-43D1-B913-7FC867F79F13}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">SmartSaber.exe</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">SmartSaber22.exe</Property>
 			</Item>
 		</Item>
 	</Item>

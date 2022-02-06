@@ -73,6 +73,10 @@ Additionally, some extra features have been implemented:
 
 2. Clone this repo
 
+3. Install the embedded fonts for extra coolness.
+
+   Double-click the TTF files under `src/SmartSaber/fonts`
+
 3. Double-click the `src/SmartSaber/SmartSaber.vi` file
 
    it should open in LabVIEW showing you this screen:
@@ -83,7 +87,7 @@ Additionally, some extra features have been implemented:
 
    This will activate the computer's BT adapters and populate the "Device Name" field to pair the smartphone, blocking execution until it's connected.
 
-5. Then, on the smartphone:
+6. Then, on the smartphone:
 
    * Pair with the computer through good-old Bluetooth settings
 
@@ -168,19 +172,22 @@ The SmartSaber LabVIEW project (`src/SmartSaber/`) is structured as follows:
   * `subVIs/sensors/` 
   * `globals/`
   
-* Pattern Recognition placeholder data:
-  * The raw data streams (`patterns/`)
-  
-  * The resulting charts for these sequences (`waveforms/`)
-  
-    > As all sensors (and warriors) are different, these moves were recorded back in 2016 and are only provided as placeholder values to populate the UI views. It is thus almost impossible to actually imitate them. Instead, the user is encouraged to record their own moves according to their devices and wrist flexibilities.
-  
 * Audiovisual FX Resources
   * `images/`
   * `sfx/`
   * `fonts/`
+  
+* Pattern Recognition data:
 
+  > The following directories are the locations where the waveforms and data streams for each recorded move are saved on runtime, and are thus not maintained. 
+  >
+  > Although the program is shipped with actual data populated in those places, it is  probably impossible to imitate them since every wrist and smartphone is different. Instead, the user is encouraged to record their own moves and then try to match them.
 
+  * The raw data streams (`patterns/`)
+
+  * The resulting charts for these sequences (`waveforms/`)
+
+    
 
 
 The VI's code revolves around 2 loops:
@@ -229,21 +236,23 @@ The program can be fully stopped through the "Operate > Stop" button in the LabV
 
 - [ ] Replace that horrible, 8bit-looking icon 
 
-- [ ] Change 3D Background to a picture of the galaxy far far Away
+- [x] Change 3D Background to a picture of the galaxy far far Away
 
-  Maybe need to do this [programmatically](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kHejSAE&l=en-GR)
+  Maybe need to do this [programmatically](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kHejSAE&l=en-GR)? 
 
-  Re-replace screenshots
+  From the failed exe/installer attempts it appears we don't need to do this programmatically and the BG is saved within the project
 
-- [ ] Star Wars fonts ("Star Jedi") as in the original project (and replace screenshots)
+- [x] ~~Auto-install fonts ("Star Jedi")~~
 
-  Need to include them in the installer, so that the user doesn't have to manually install them to their system
+  Since we can't build working executable / installer, we'll just ask the user politely to install them first
 
-- [ ] investigate if it's possible to use "LabVIEW Online" to quick-demo the project
+- [ ] Investigate if it's possible to use "LabVIEW Online" to quick-demo the project
 
 - [ ] Lightsaber handle decals, not just beam ones
 
-- [ ] Code your own client app?
+- [ ] Code our own Android app?
 
-- [ ] Create Installer and EXE app to abstract LabVIEW details.
+- [x] ~~Create Installer and EXE app to abstract LabVIEW details.~~
+
+  Tried and failed with unsatisfied reference errors, giving up, too much effort
 
