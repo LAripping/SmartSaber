@@ -6,11 +6,11 @@
 
 A long time ago in a galaxy far far away, the final assignment for my Real Time Digital Signal Processing (RT-DSP) [Uni course](https://www.di.uoa.gr/en/studies/undergraduate/303) was to create a [LabVIEW](https://www.ni.com/en-us/shop/labview.html) project that would somehow -you guessed it- capture, process and *visualise* digital signals produced in real time. 
 
-Going through the Star Wars phase at the time, the idea was to somehow animate a  <span style="color:fuchsia;font-weight:bold">lightsaber</span> in 3D space that would mirror one's hand movements. How? Using a smartphone, by running motion-capturing apps that would send the data to a computer to get 3D-rendered. 
+Going through the Star Wars phase at the time, the idea was to somehow animate a  ***lightsaber*** in 3D space that would mirror one's hand movements. How? Using a smartphone, by running motion-capturing apps that would send the data to a computer to get 3D-rendered. 
 
 Lo and behold:
 
-==**TODO** insert video== 
+![](videos/demo_patrec-sidebyside-rec4.mp4)
 
 In 2022 I decided to revive this gem, and open-source it to share the fun! 
 
@@ -81,25 +81,25 @@ Additionally, some extra features have been implemented:
 
    it should open in LabVIEW showing you this screen:
 
-   ![](screenshots/launch-fonts.png)
+   ![](screenshots/launch-fonts-bg.png)
 
 4. Click "Operate > Run" to start the program.
 
    This will activate the computer's BT adapters and populate the "Device Name" field to pair the smartphone, blocking execution until it's connected.
 
-6. Then, on the smartphone:
-
-   * Pair with the computer through good-old Bluetooth settings
-
-   * Launch the AndroView app and ignore the VI download prompt
-
-   * Connect with the computer by entering the provided device name 
+6. On the smartphone, pair it with the computer as usual through BT settings, then launch the AndroView app (ignore the VI download prompt, this project already includes it) and connect with the computer by entering the provided device name 
 
 6. Once the lightsaber beam appears, calibrate the relative north using the UI knob while holding the device in an upright position, until the lightsaber is oriented appropriately
 
-   ![](screenshots/relnorth-fonts.png)
+   ![](screenshots/relnorth-fonts-bg.png)
 
 7. Start swinging! - ***MAY THE FORCE BE WITH YOU***
+
+
+
+This is how it all looks like:
+
+![](videos/intro-sidebyside-rec3.mp4)
 
 
 
@@ -216,7 +216,7 @@ The VI's code revolves around 2 loops:
 
    The motion sensor data-stream received is also continuously plotted in the Front Panel in scrolling charts for all X, Y and Z axes.
 
-   ![](screenshots/charts-fonts.png)
+   ![](screenshots/charts-fonts-bg.png)
 
    The main loop is also responsible for detecting the recorded patterns,  by continuously checking the received byte stream of a fixed time window, and comparing it point-to-point with all three recorded waveforms (tolerant to a certain error margin)
 
