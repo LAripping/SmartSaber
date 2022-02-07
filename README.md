@@ -2,21 +2,23 @@
 
 # SmartSaber
 
-> *A LabVIEW project that virtualises hand movements captured via a smartphone's sensors, and graphically reproduces them in real time as a 3D lightsaber!* 
-
 A long time ago in a galaxy far far away, the final assignment for my Real Time Digital Signal Processing (RT-DSP) [Uni course](https://www.di.uoa.gr/en/studies/undergraduate/303) was to create a [LabVIEW](https://www.ni.com/en-us/shop/labview.html) project that would somehow -you guessed it- capture, process and *visualise* digital signals produced in real time. 
 
-Going through the Star Wars phase at the time, the idea was to somehow animate a  ***lightsaber*** in 3D space that would mirror one's hand movements. How? Using a smartphone, by running motion-capturing apps that would send the data to a computer to get 3D-rendered. 
-
-Lo and behold:
-
-![](videos/demo_patrec-sidebyside-rec4.mp4)
+Going through the Star Wars phase at the time, the idea was to somehow animate a  ***lightsaber*** in 3D space that would mirror one's hand movements. How? Using a smartphone, by running a motion-capturing app that would send the data to a computer to get 3D-rendered. 
 
 In 2022 I decided to revive this gem, and open-source it to share the fun! 
 
-The original final deliverable for the 2016 assignment can be found in the [RT-DSP Project Spec.pdf](RT-DSP Project Spec.pdf) doc but it's in ​Gr​ee​k :greece:,  so you can find most of it's content in the following sections :gb:.
+And here's what it looks like:
 
-You can start practicing the Jedi tradecraft in your own dojo, by following the [step-by-step guide](#Usage Instructions). 
+|  |  |
+|--|--|
+| ![](screenshots/screen1.png) | ![](screenshots/screen2.png)
+
+*Take a look at the demo [video](videos/smaller-demo_patrec-sidebyside-rec4.mp4) too (including kick-ass sound effects! 🔊)*
+
+The original final deliverable for the 2016 assignment can be found in the [RT-DSP Project Spec.pdf](https://github.com/LAripping/SmartSaber/files/8016090/RT-DSP.Project.Spec.pdf) doc but it's in Greek &#x1F535; so you can find most of it's content in the following sections in english &#x1F534;.
+
+You can start practicing the Jedi tradecraft in your own dojo, by following the [step-by-step guide](#usage-instructions). 
 
 
 
@@ -57,9 +59,9 @@ Additionally, some extra features have been implemented:
   
   | Downward Slash                           | Overhead Block                           | Reflector Spin                           |
   | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-  | ![](initial resources/DownwardSlash.png) | ![](initial resources/OverheadBlock.png) | ![](initial resources/ReflectorSpin.png) |
+  | ![](initial%20resources/DownwardSlash.png) | ![](initial%20resources/OverheadBlock.png) | ![](initial%20resources/ReflectorSpin.png) |
   
-  
+  You can see this feature in action in the [demo video](videos/smaller-demo_patrec-sidebyside-rec4.mp4). 
 
 
 
@@ -69,7 +71,7 @@ Additionally, some extra features have been implemented:
 
 1. Download and Install LabVIEW from [here](https://www.ni.com/en-us/support/downloads/software-products/download.labview.html) 
 
-   > NI, the owner of LabVIEW offers a free 1year trial of LabVIEW's Community edition, which should be more than enough for practicing this project.
+   > NI offers a free 1year trial of LabVIEW's Community edition, which should be more than enough for practicing this project.
 
 2. Clone this repo
 
@@ -94,12 +96,9 @@ Additionally, some extra features have been implemented:
    ![](screenshots/relnorth-fonts-bg.png)
 
 7. Start swinging! - ***MAY THE FORCE BE WITH YOU***
+  
 
-
-
-This is how it all looks like:
-
-![](videos/intro-sidebyside-rec3.mp4)
+> Visual type? Follow along the relevant video [here](videos/smaller-intro-sidebyside-rec3.mp4)
 
 
 
@@ -145,7 +144,7 @@ In detail, here's what was used for a working setup, both originally and for the
 | "AndroView Free" version 2.4.1, downloaded from [Play Store](https://play.google.com/store/apps/details?id=com.heightdev.androviewbluetooth) <sup>1</sup> | Graphics Card: AMD Radeon HD 4650        |
 | "Sensor Network for LabVIEW" version 1.1.2, downloaded from [Play Store](https://play.google.com/store/apps/details?id=com.heightdev.androviewbluetooth) <sup>1</sup> | LabVIEW version: 8.5                     |
 
-[^1]: Application no longer available
+>  <sup>1</sup> Application no longer available
 
 
 
