@@ -1,0 +1,36 @@
+---
+---
+$conifer: #ffde06;
+@import "{{ site.theme }}";
+header h1:before {
+    content: "";
+    font-size: 24px;
+}
+
+header h1 {
+    font-size: 45px;
+    //line-height: 3.5;
+    margin-top: 3.5rem;
+    text-align: center;
+    color: #ffde06;
+}
+
+header h2 {
+    text-align: center;
+}
+
+#downloads {
+   text-align: center;
+}
+
+header, th, hr {
+    border-bottom: 1px dashed #ffde06;
+}
+
+body {
+    background: black;
+}
+
+h1, h2, h3, h4, h5, h6, hr {
+   color: #ffde06;
+}
