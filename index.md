@@ -1,6 +1,6 @@
 *A long time ago in a galaxy far far away... (🔊)*
 
-<video controls="controls" style="display:block; margin:auto; height:30em">
+<video controls="controls" style="display:block; margin:auto; height:30em; width:100%">
   <source src="https://github.com/LAripping/SmartSaber/raw/master/videos/smaller-demo_patrec-sidebyside-rec4.mp4" type="video/mp4">
 </video>
 
