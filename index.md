@@ -1,37 +1,64 @@
-## Welcome to GitHub Pages
+*A LabVIEW project that lets you swing a 3D lightsaber using only your smartphone*
 
-You can use the [editor on GitHub](https://github.com/LAripping/SmartSaber/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<video controls="controls" style="display:block; margin:auto; height:30em">
+  <source src="https://github.com/LAripping/SmartSaber/raw/master/videos/smaller-demo_patrec-sidebyside-rec4.mp4" type="video/mp4">
+</video>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Setup Instructions
 
-### Markdown
+1. Download and Install [LabVIEW](https://www.ni.com/en-us/support/downloads/software-products/download.labview.html) 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+2. Clone the [SmartSaber code](https://github.com/laripping/smartsaber)
 
-```markdown
-Syntax highlighted code block
+3. Install the [fonts](https://github.com/LAripping/SmartSaber/tree/master/src/SmartSaber/fonts)
 
-# Header 1
-## Header 2
-### Header 3
+4. Run the [main VI](https://github.com/LAripping/SmartSaber/tree/master/src/SmartSaber/SmartSaber.vi)
 
-- Bulleted
-- List
+5. Pair your smartphone and LabVIEW computer using Bluetooth and install the [AndroView app](https://m.apkpure.com/androview-free-labview-vi/com.heightdev.androviewbluetooth)
 
-1. Numbered
-2. List
+6. Calibrate the relative north to channel the Force and...
 
-**Bold** and _Italic_ and `Code` text
+7. Start swinging
 
-[Link](url) and ![Image](src)
-```
+`May the force be with you`
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+# Features 
 
-### Jekyll Themes
+### Lightsaber Customisation
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/LAripping/SmartSaber/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Choose your weapon, from a set of four iconic options:
 
-### Support or Contact
+  * <span style=color:blue>Luke's Training Lightsaber</span>
+  * <span style=color:green>Luke's Jedi Lightsaber</span>
+  * <span style=color:red>Darth Maul's Lightsaber</span>
+  * <span style=color:fuchsia>Mace Windu's Lightsaber</span>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### 
+
+The Jedi Master first records three lightsaber moves and saves the waveforms using the UI buttons.
+Then, when the young padawan successfully replays any of these moves, SmartSaber will let them know through the relevant indicator **and** play a cool sound effect
+
+An example "triple-threat" of moves that can be loaded to the program are:   
+  
+| Downward Slash                           | Overhead Block                           | Reflector Spin                           |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| <img src="https://github.com/LAripping/SmartSaber/raw/master/initial%20resources/DownwardSlash.png"/> | <img src="https://github.com/LAripping/SmartSaber/raw/master/initial%20resources/OverheadBlock.png"/> | <img src="https://github.com/LAripping/SmartSaber/raw/master/initial%20resources/ReflectorSpin.png"/>|
+
+> This feature is actually demonstrated near the end of the video above
+
+
+### Proximity Activation
+
+Tap your smartphone's proximity sensor to enable / disable the light beam <sup>1</sup>
+
+
+
+
+* * *
+  
+# More Info
+
+Experiencing issues? Bedazzled and seeking more info? Wanna hack this even cooler?? 
+You'll find everything you desire in the project's repo: https://github.com/LAripping/SmartSaber/
+
+<sup>1</sup> Might not work as intended in modern smartphones
