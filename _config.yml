@@ -3,5 +3,7 @@ plugins:
 - jekyll-remote-theme
 description: A LabVIEW project that lets you swing a 3D lightsaber using only your smartphone
 show_downloads: true
-
+github:
+  tar_url: https://github.com/LAripping/SmartSaber/tarball/master
+  zip_url: https://github.com/LAripping/SmartSaber/zipball/master
 
