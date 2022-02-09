@@ -1,3 +1,7 @@
+---
+image: assets/images/seo-preview-ideas/videosnap.png
+---
+
 *A long time ago in a galaxy far far away... (🔊)*
 
 <video controls="controls" style="display:block; margin:auto; height:30em; width:100%">
